@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "react-share": "^5.1.0",
+    "react-slick": "^0.30.2",
+    "react-slider": "^2.0.6",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.13",
+    "sass": "^1.72.0"
+  }
+}
