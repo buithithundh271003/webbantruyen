@@ -4,13 +4,12 @@ import Header from "../../../compoment/header"
 import { useAppDispatch, useAppSelector } from "../../../redux/hook";
 import IOrder from "../../../interface/order";
 import { useEffect, useState } from "react";
-import { getAllOrder, getOrder } from "../../../redux/Reducer/OrderSlice";
+import {  getOrder } from "../../../redux/Reducer/OrderSlice";
 import { getAllProduct } from "../../../redux/Reducer/ProductSlice";
 import IProduct from "../../../interface/product";
 
 const BillConfirm = () => {
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
     const [user, setUser] = useState()
 
 
@@ -29,18 +28,6 @@ const BillConfirm = () => {
             setUser(userStore)
         }
     }, []);
-    // useEffect(() => {
-    //     // setIsLoading(true);
-    //     dispatch(getOrder(id))
-    //     dispatch(getAllProduct())
-    //     const userStore = JSON.parse(localStorage.getItem("user")!)
-    //     if (userStore) {
-    //         setUser(userStore)
-    //     }
-    // }, [dispatch]);
-
-
-    // const order = orders?.find((order: IOrder) => order._id === id);
 
     return <>
         <div className="wrapper">

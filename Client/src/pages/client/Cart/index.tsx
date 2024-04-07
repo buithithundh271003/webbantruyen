@@ -12,38 +12,22 @@ import ICart from "../../../interface/cart";
 
 const cart = () => {
     const dispatch = useAppDispatch();
-    // const [user, setUser] = useState()
     const user = JSON.parse(localStorage.getItem("user")!)
 
 
-    // const navigate = useNavigate();
-
-    const [messageApi, contextHolder] = message.useMessage();
-
     const carts = useAppSelector((state) => state.Cart.carts);
-    // console.log(Allcarts);
-
-    // const carts = Allcarts?.filter(u => u._id === user._id)
-
     const products = useAppSelector((state) => state.Product.products);
     let totalMoney: number = 0;
     carts?.map(item => {
         totalMoney += item.totalMoney
     })
-
-    // const [quantity, setQuantity] = useState(1)
     useEffect(() => {
         dispatch(getAllCart(user._id))
         dispatch(getAllProduct())
     }, [])
     useEffect(() => {
-        // setIsLoading(true);
         dispatch(getAllCart(user._id))
         dispatch(getAllProduct())
-        // const userStore = JSON.parse(localStorage.getItem("user")!)
-        // if (userStore) {
-        //     setUser(userStore)
-        // }
     }, [dispatch]);
 
     const confirm = async (id: string) => {
